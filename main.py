@@ -30,7 +30,8 @@ class FirestorePush:
             idx+=1
             print(str(idx) + str('/')+str(total)+": "+str(record['q']))
             record_ref=question_ref.document()
-
+            # TODO replace &#10; to \n
+            # TODO add another line feed between translation and explaination
             batch.set(record_ref, {
                 'qId': record_ref.id,
                 'cC': 0,

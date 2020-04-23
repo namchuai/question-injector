@@ -1,0 +1,38 @@
+[
+        {
+            "id": "1",
+            "s": "<1>|<2>|<3>|<4>",
+            "c": "<2>",
+            "e": "A woman is painting a house.|A woman is watering a plant.|A woman is fixing a door.|A woman is sweeping a walkway."
+        },
+        {
+            "id": "2",
+            "s": "<1>|<2>|<3>|<4>",
+            "c": "<3>",
+            "e": "They're folding some papers.|They're putting a picture in a frame.|They're studying a drawing.|They're closing a window."
+        },
+        {
+            "id": "3",
+            "s": "<1>|<2>|<3>|<4>",
+            "c": "<4>",
+            "e": "The man is turning on a light.|The man is giving the woman a  book.|The woman is posting signs on a wall.|The woman is typing on a keyboard."
+        },
+        {
+            "id": "4",
+            "s": "<1>|<2>|<3>|<4>",
+            "c": "<1>",
+            "e": "Some clothing has been hung up.|Some boxes are stacked on a cart.|A bag has fallen on the floor.|A chair has been pushed under a desk."
+        },
+        {
+            "id": "5",
+            "s": "<1>|<2>|<3>|<4>",
+            "c": "<4>",
+            "e": "Some customers are paying for their meals.|Some workers are washing dishes.|Some food is being placed in a refrigerator.|Some large cooking pots are on a counter."
+        },
+        {
+            "id": "6",
+            "s": "<1>|<2>|<3>|<4>",
+            "c": "<3>",
+            "e": "Runners are lined up for the start of a race.|Some people are cheering for a sports team.|An athletic field is located near some trees.|Lawn mowers are being used to cut the grass."
+        }
+    ]
