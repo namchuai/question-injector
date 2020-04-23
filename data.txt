@@ -1,0 +1,20 @@
+[
+    {
+        "q": "Over the past ten years, Bellworth Medical Clinic _____ Atlan Protection officers for all security needs.",
+        "s": "is hiring|were hiring|has hired|was hired",
+        "c": "has hired",
+        "e": "Trong mười năm qua, Phòng khám Y tế Bellworth đã thuê các nhân viên Bảo vệ Atlan cho tất cả các nhu cầu an ninh.&#10;Chọn (C) do khoảng trống đứng sau chủ ngữ (Bellworth Medical Clinic) cần điền động từ chính (chia thì) và đầu câu có cụm trạng ngữ thời gian (over the past ...) là dấu hiệu của thì hiện tại hoàn thành.&#10;Loại trừ: (A) thì hiện tại tiếp diễn&#10;(B) thì quá khứ tiếp diễn&#10;(D) thì quá khứ đơn ở thể bị động"
+    },
+    {
+        "q": "The driver will make three _____ to deliver the package before it is returned to our warehouse.",
+        "s": "attempts|pursuits|aims|experiences",
+        "c": "attempts",
+        "e": "Tài xế sẽ thực hiện ba lần thử để giao gói hàng trước khi được trả lại kho của chúng tôi.&#10;Chọn (A) nghĩa là lấp đầy, thế vào.&#10;Loại trừ: (B) kiểm tra&#10;(C)tùy chỉnh&#10;(D)nâng cấp, cải tạo"
+    },
+    {
+        "q": "We congratulate all Riverside employees, whose _____ effort has resulted in a 20 percent reduction in waste disposal costs.",
+        "s": "collect|collective|collects|collector",
+        "c": "collective",
+        "e": "Chúng tôi xin chúc mừng tất cả các nhân viên của Riverside, những người đã có nỗ lực tập thể đã giúp giảm 20% chi phí xử lý chất thải.&#10;Chọn (B) do phía sau có danh từ effort cần điền tính từ để bổ nghĩa.&#10;Loại trừ: (A) động từ nguyên mẫu&#10;(C)thì hiện tại đơn chia ở ngôi thứ 3 số ít&#10;(D)danh từ"
+    }
+]
