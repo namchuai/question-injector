@@ -8,35 +8,33 @@ class FirestorePush:
         cred = credentials.Certificate('./ServiceAccountKey.json')
         self.app=firebase_admin.initialize_app(cred)
         self.store=firestore.client()
-        self.userId='NGO8RIbS2DhqVOiMolfwTX0r0qt2'
 
-        with open('./data.txt','r') as f:
+        with open('./data-p5.json','r') as f:
             self.data = json.load(f)
 
-    def push(self):
+    def my_push(self):
         question_ref=self.store.collection('questions')
-        total=len(self.data)
-        idx=0
+        total_record_cnt=len(self.data)
 
+        curr_record_idx=0
         batch=self.store.batch()
         for record in self.data:
-            if idx % 500 ==0:
-                if idx >0:
-                    print('Committing..')
+            if curr_record_idx%500==0:
+                if curr_record_idx>0:
+                    print('Commiting after 500 records..')
                     batch.commit()
-
-                # start a new batch for the next iteration
                 batch=self.store.batch()
-            idx+=1
-            print(str(idx) + str('/')+str(total)+": "+str(record['q']))
-            record_ref=question_ref.document()
-            # TODO replace &#10; to \n
-            # TODO add another line feed between translation and explaination
-            batch.set(record_ref, {
-                'qId': record_ref.id,
-                'cC': 0,
+            record_ref_id=''
+            if 'qId' in record:
+                record_ref_id=record['qId']
+            else:
+                record_ref_id=question_ref.document().id
+            print(record_ref_id)
+            batch.set(question_ref.document(record_ref_id), {
+                'qId': record_ref_id, # currently using this field to random query
                 't': 'toeic-p5',
-                'e': record['e'].strip(),
+                'cC': 0, # comment count
+                'eC': 0, # explaination count
                 'q': [
                     {
                         'q': record['q'].strip(),
@@ -45,13 +43,12 @@ class FirestorePush:
                     }
                 ]
             })
-
-        # include current record in batch
-        if idx %500 != 0:
-            print('Committing..')
-            batch.commit()
+            curr_record_idx+=1
+        print('Commit before reach 500 records..')
+        batch.commit()
+        print('Finished!')
 
 if __name__ == '__main__':
     f = FirestorePush()
-    f.push()
+    f.my_push()
 

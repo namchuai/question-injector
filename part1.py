@@ -32,7 +32,7 @@ class FirestorePush:
             idx+=1
             print(str(idx) + str('/')+str(total)+": "+str(record['id']))
             record_ref=question_ref.document()
-            
+
             # image
             image_name = "%s.png"%record['id']
             img = Image.open('%s%s'%(self.base_path, image_name))
