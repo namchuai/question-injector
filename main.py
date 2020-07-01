@@ -360,6 +360,48 @@ class FirestorePush:
         question_ref.document(qId).set(data)
         return qId
 
+    def insert_part7(self):
+        question_ref = self.store.collection('questions')
+        loc=('learnenglish_data_new2017.xlsx')
+        wb=xlrd.open_workbook(loc)
+        sheet=wb.sheet_by_name('Part7')
+
+        current_row = 1
+
+        question_row_ids = [3, 10, 17, 24, 31]
+
+        total_row=sheet.nrows
+        while (current_row<total_row):
+            paragraph = sheet.cell_value(current_row, 2)
+            questions_data = []
+            for id in question_row_ids:
+                question=sheet.cell_value(current_row, id)
+                if len(question) == 0:
+                    break
+                else:
+                    question_data = {
+                        'q': question,
+                        's': sheet.cell_value(current_row, id+5),
+                        'c': sheet.cell_value(current_row, id+6)
+                    }
+                    questions_data.append(question_data)
+            
+            qId = sheet.cell_value(current_row, 1)
+            if len(qId) == 0:
+                qId = question_ref.document().id
+
+            data = {
+                'qId': qId,
+                't': 'toeic-p7',
+                'cC': 0,
+                'eC': 0,
+                'p' : paragraph,
+                'q': questions_data
+            }
+            question_ref.document(qId).set(data)
+            print(qId)
+            current_row+=1
+
     def read_excel(self):
         loc=('learnenglish_data.xlsx')
         wb=xlrd.open_workbook(loc)
@@ -436,7 +478,8 @@ class FirestorePush:
 
 if __name__ == '__main__':
     f = FirestorePush()
-    f.insert_part_2()
+    f.insert_part7()
+    # f.insert_part_2()
     # f.add_explaination_p5()
     # f.test_upload_p6()
     #f.my_push()
